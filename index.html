@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecuaciones Diferenciales en un Helicóptero de Dos Grados de Libertad</title>
+    <script src="https://cdn.jsdelivr.net/npm/numeric/numeric-1.2.6.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app">
+        <h1>Ecuaciones Diferenciales en un Helicóptero de Dos Grados de Libertad</h1>
+        <div class="content">
+            <div class="equations">
+                <h2>Movimiento Longitudinal</h2>
+                <p>La ecuación diferencial que describe el movimiento longitudinal de un helicóptero es:</p>
+                <p>m (d²x/dt²) = Fₚ - cₑ (dx/dt)²</p>
+                <input id="x0" type="number" placeholder="Posición Inicial (x0)">
+                <input id="v0" type="number" placeholder="Velocidad Inicial (v0)">
+                
+                <h2>Movimiento de Balanceo</h2>
+                <p>La ecuación diferencial que describe el movimiento de balanceo de un helicóptero es:</p>
+                <p>Iₓ (d²θ/dt²) = d (Fᵤ - Fᵦ) - cₜ (dθ/dt)</p>
+                <input id="theta0" type="number" placeholder="Ángulo Inicial (θ0)">
+                <input id="omega0" type="number" placeholder="Velocidad Angular Inicial (ω0)">
+                
+                <button id="solveButton" onclick="solve()">Resolver</button>
+                <button id="clearButton" onclick="clearData()">Limpiar Datos</button>
+            </div>
+            <div class="image">
+                <img src="imgs/helicoptero.png" alt="Helicóptero">
+            </div>
+        </div>
+        <div id="results">
+            <div id="longitudinal-results">
+                <h2>Resultados del Movimiento Longitudinal</h2>
+                <canvas id="longitudinalChart"></canvas>
+            </div>
+            <div id="pitch-results">
+                <h2>Resultados del Movimiento de Balanceo</h2>
+                <canvas id="pitchChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
